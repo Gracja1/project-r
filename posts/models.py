@@ -8,25 +8,28 @@ class Posts(models.Model):
     rest_name = models.CharField(max_length=32)
     rest_descp = models.TextField()
 
-    # rest_type ( 1 to 1 connection with model Types)
+    # rest_type ( 1 do 1 polaczenie z typem restauracji)
     # date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         # jak bedzie wygladac objekt klasy Posts w shellu
         return self.rest_name
 
+        # to w shellu
         # from  posts.models import Posts
         # Posts.objects.all()
 
 
 class User(models.Model):
     pass
-    # tu wszystko pod django auth i formularz post
+    # tu wszystko pod django auth i formularz w HTML metodą post
+
 
 
 class Comment(models.Model):
     users = models.ManyToManyField(User)
     restaurant = models.ForeignKey(Posts, on_delete=models.CASCADE)
+
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

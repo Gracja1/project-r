@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post-list</title>
+</head>
+<body>
+<h1>post list</h1>
+{% for post in posts %}
+<h2> <a href="#"> {{post.rest_name}} </a> </h2>
+<p> {{post.rest_descp}} </p>
+{% endfor %}
+
+</body>
+</html>

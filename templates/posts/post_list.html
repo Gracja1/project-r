@@ -5,11 +5,37 @@
     <title>post-list</title>
 </head>
 <body>
+
+<nav>
+    <ul>
+        <li>
+            <form class="logout-link" action="{% url 'logout'%}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+
+        <li>
+            <form action="http://127.0.0.1:8000/comment/">
+                <input type="submit" value="comment"/>
+            </form>
+        </li>
+
+        <li>
+            <form action="http://127.0.0.1:8000/login/">
+                <input type="submit" value="login"/>
+            </form>
+        </li>
+
+    </ul>
+</nav>
+
 <h1>post list</h1>
 {% for post in posts %}
-<h2> <a href="#"> {{post.rest_name}} </a> </h2>
+<h2><a href="#"> {{post.rest_name}} </a></h2>
 <p> {{post.rest_descp}} </p>
 {% endfor %}
+
 
 </body>
 </html>

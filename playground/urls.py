@@ -23,6 +23,12 @@ urlpatterns = [
     path('about/', views.about),
     path('', views.home),
     path('posts/', views.posts),
-    path('post-list/', views.post_list)
+    path('post-list/', views.post_list),
+    path('signup/', views.signup_view),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('comment/', views.comment_view, name='comment'),
+
+
 
 ]
